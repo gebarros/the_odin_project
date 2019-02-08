@@ -1,0 +1,58 @@
+body {
+    font: small arial, sans-serif;
+    background-color: white;
+    border: 50px;
+}
+
+form{
+  position: fixed;
+  top: 43%;
+  left: 35%;
+}
+
+.topnav-right {
+  float: right;
+  padding: 25px 25px;
+  word-spacing: 0.5em;
+  font-size: 14px;
+}
+
+.center {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#app {
+  vertical-align: middle;
+}
+
+#login{
+  background-color: blue;
+  color: white;
+  border-style: solid blue;
+}
+
+#bt-1{
+  background-color: lightgrey;
+  border-style: lightgrey;
+  color: gray;
+  font-size: 18px;
+  position: fixed;
+  top: 47%;
+  left: 42%;
+}
+
+#bt-2{
+  background-color: lightgrey;
+  border-style: lightgrey;
+  color: gray;
+  font-size: 18px;
+  position: fixed;
+  top: 47%;
+  left: 51%;
+}
+
+
