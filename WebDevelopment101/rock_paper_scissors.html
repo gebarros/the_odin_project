@@ -8,26 +8,47 @@
 </head>
 <body>
     <script>
+        function computerPlay(){
+            var choices = ['rock', 'paper', 'scisor'];
+            var randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+        
         function playRound(playerSelection, computerSelection){
             var player = playerSelection.toLowerCase()
             var computer = computerSelection.toLowerCase()
-            if(player == computer){
-                return 'It was a draw, no one won!';
-            } else if(player == 'rock' && computer == 'paper'){
-                return 'You lose! Paper beats Rock.';
-            } else if(player == 'paper' && computer == 'scisor'){
-                return 'You lose! Scisor cuts Paper.'; 
-            } else if (player == scisor && computer == 'rock'){
-                return 'You lose! Rock beats Scisor.';
-            } else{
-                return 'You win!' + player + ' is powerfull than ' + computer;
-            }
 
+                if(player == computer){
+                    return 'tie';
+                } else if(player == 'rock' && computer == 'paper'){
+                    return 'lose';
+                } else if(player == 'paper' && computer == 'scisor'){
+                    return 'lose'; 
+                } else if (player == 'scisor' && computer == 'rock'){
+                    return 'lose';
+                } else{
+                    return 'win';
+                }
         }
-        
-        const playerSelection = 'rock'
-        const computerSelection = computerPlay()
-        console.log(playRound(playerSelection, computerSelection))
+
+        function game(){
+            var computer_score = 0;
+            var player_score = 0;
+            while(computer_score < 5 && player_score < 5){
+                var playerSelection = window.prompt('Choose: rock, paper or scisor');
+                var computerSelection = computerPlay();
+                var result = playRound(playerSelection, computerSelection);
+                if(result == 'lose') computer_score++;
+                if(result == 'win') player_score++;
+
+            }
+            if(player_score > computer_score){
+                return 'You win! ' + player_score + ' X ' + computer_score;
+            } else{
+                return 'You lose! ' + computer_score +  ' X ' + player_score;
+            }
+    
+        }
     </script>
 </body>
 </html>
